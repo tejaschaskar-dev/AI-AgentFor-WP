@@ -1,38 +1,37 @@
 /**
- * WP Agent AI – Block Entry Point
+ * WP Agent AI – Block Registration
  *
- * Registers the custom block category and the block itself.
+ * Category registration is handled server-side via block_categories_all filter.
+ * This file only registers the block type with its Edit/Save components.
  *
  * @package WpAgentAi
  */
 
-import { registerBlockType, getCategories, setCategories } from '@wordpress/blocks';
-import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { __ }               from '@wordpress/i18n';
 
 import Edit from './edit';
 import Save from './save';
-import metadata from './block.json';
 
-// ─── Register custom block category ────────────────────────────────────────
-
-const existingCategories = getCategories();
-const categoryExists     = existingCategories.some( ( c ) => c.slug === 'wp-agent-ai' );
-
-if ( ! categoryExists ) {
-	setCategories( [
-		{
-			slug:  'wp-agent-ai',
-			title: __( 'WP Agent AI', 'wp-agent-ai' ),
-			icon:  'superhero-alt',
-		},
-		...existingCategories,
-	] );
-}
-
-// ─── Register block ─────────────────────────────────────────────────────────
-
-registerBlockType( metadata.name, {
-	...metadata,
+registerBlockType( 'wp-agent-ai/landing-page-writer', {
+	apiVersion:  3,
+	title:       __( 'AI Landing Page Writer', 'wp-agent-ai' ),
+	category:    'wp-agent-ai',
+	icon:        'superhero-alt',
+	description: __( 'Generate landing page sections using OpenRouter AI.', 'wp-agent-ai' ),
+	keywords:    [ 'ai', 'landing page', 'openrouter', 'gpt', 'claude' ],
+	attributes: {
+		description:   { type: 'string',  default: '' },
+		sectionType:   { type: 'string',  default: 'hero' },
+		tone:          { type: 'string',  default: 'professional' },
+		length:        { type: 'string',  default: 'medium' },
+		lastGenerated: { type: 'object',  default: null },
+	},
+	supports: {
+		html:     false,
+		reusable: false,
+		inserter: true,
+	},
 	edit: Edit,
 	save: Save,
 } );
