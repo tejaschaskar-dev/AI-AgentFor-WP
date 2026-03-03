@@ -1,0 +1,61 @@
+/**
+ * WP Agent AI – Admin Settings Page Styles
+ *
+ * @package WpAgentAi
+ */
+
+/* ── Page wrapper ─────────────────────────────────────────────────────────── */
+
+.wp-agent-ai-settings-wrap {
+	max-width: 780px;
+}
+
+.wp-agent-ai-settings-wrap h1 {
+	display:     flex;
+	align-items: center;
+	gap:         8px;
+	color:       #1e1e1e;
+}
+
+/* ── Section headings ─────────────────────────────────────────────────────── */
+
+.wp-agent-ai-settings-wrap h2 {
+	font-size:   1.1rem;
+	font-weight: 600;
+	color:       #3b0764;
+	margin-top:  28px;
+}
+
+/* ── Settings table ───────────────────────────────────────────────────────── */
+
+.wp-agent-ai-settings-wrap .form-table th {
+	font-weight: 600;
+	color:       #374151;
+}
+
+.wp-agent-ai-settings-wrap .form-table td input[type="password"],
+.wp-agent-ai-settings-wrap .form-table td select {
+	min-width: 320px;
+}
+
+/* ── Test connection area ─────────────────────────────────────────────────── */
+
+#wp-agent-ai-test-btn {
+	display:      inline-flex;
+	align-items:  center;
+	gap:          6px;
+	border-color: #c4b5fd;
+	color:        #4c1d95;
+}
+
+#wp-agent-ai-test-btn:hover {
+	border-color: #7c3aed;
+	color:        #7c3aed;
+	background:   #f5f0ff;
+}
+
+#wp-agent-ai-test-result {
+	font-size:   14px;
+	font-weight: 600;
+	transition:  color 0.2s ease;
+}
