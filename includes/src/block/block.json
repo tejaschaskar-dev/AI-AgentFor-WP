@@ -9,8 +9,8 @@
   "description": "Generate full landing page sections using OpenRouter AI.",
   "keywords": [ "ai", "landing page", "generator", "openrouter", "gpt", "claude" ],
   "textdomain": "wp-agent-ai",
-  "editorScript": "file:../../build/block/index.js",
   "editorStyle":  "file:../../build/block/index.css",
+  "style":        "file:../../build/block/index.css",
   "supports": {
     "html":      false,
     "reusable":  false,
