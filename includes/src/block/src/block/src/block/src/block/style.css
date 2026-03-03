@@ -1,0 +1,124 @@
+/**
+ * WP Agent AI – Block Editor Styles
+ *
+ * Scoped to .wp-agent-ai-block so nothing leaks into the post content.
+ *
+ * @package WpAgentAi
+ */
+
+/* ── Wrapper ────────────────────────────────────────────────────────────── */
+
+.wp-agent-ai-block {
+	box-sizing:    border-box;
+	border:        2px dashed #c4b5fd;
+	border-radius: 10px;
+	padding:       20px 22px;
+	background:    #faf8ff;
+	font-family:   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-size:     14px;
+	color:         #1e1e1e;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.wp-agent-ai-block__header {
+	display:       flex;
+	align-items:   center;
+	gap:           8px;
+	margin-bottom: 16px;
+	font-size:     15px;
+	font-weight:   600;
+	color:         #3b0764;
+}
+
+.wp-agent-ai-block__icon {
+	font-size:  20px;
+	color:      #7c3aed;
+	line-height: 1;
+}
+
+/* ── Notices ─────────────────────────────────────────────────────────────── */
+
+.wp-agent-ai-block .components-notice {
+	margin: 0 0 14px;
+}
+
+/* ── Panel ───────────────────────────────────────────────────────────────── */
+
+.wp-agent-ai-block .components-panel {
+	border:        1px solid #ede9ff;
+	border-radius: 8px;
+	overflow:      hidden;
+	margin-bottom: 14px;
+}
+
+.wp-agent-ai-block .components-panel__body-title button {
+	font-weight: 600;
+	color:       #4c1d95;
+}
+
+/* ── Textarea + Select overrides ─────────────────────────────────────────── */
+
+.wp-agent-ai-block .components-base-control {
+	width: 100%;
+}
+
+.wp-agent-ai-block .components-textarea-control__input,
+.wp-agent-ai-block .components-select-control__input {
+	border-color: #ddd6fe;
+}
+
+.wp-agent-ai-block .components-textarea-control__input:focus,
+.wp-agent-ai-block .components-select-control__input:focus {
+	border-color: #7c3aed;
+	box-shadow:   0 0 0 1px #7c3aed;
+}
+
+/* ── Action buttons ──────────────────────────────────────────────────────── */
+
+.wp-agent-ai-block__actions {
+	display:     flex;
+	gap:         10px;
+	align-items: center;
+	margin-top:  4px;
+	flex-wrap:   wrap;
+}
+
+.wp-agent-ai-block__btn-generate.components-button.is-primary {
+	background:   #7c3aed;
+	border-color: #7c3aed;
+	gap:          6px;
+}
+
+.wp-agent-ai-block__btn-generate.components-button.is-primary:hover:not(:disabled) {
+	background:   #6d28d9;
+	border-color: #6d28d9;
+}
+
+.wp-agent-ai-block__btn-generate.components-button.is-primary:disabled {
+	opacity: 0.6;
+	cursor:  not-allowed;
+}
+
+.wp-agent-ai-block__btn-generate .components-spinner {
+	margin: 0;
+}
+
+.wp-agent-ai-block__btn-regenerate.components-button {
+	color:        #7c3aed;
+	border-color: #c4b5fd;
+}
+
+.wp-agent-ai-block__btn-regenerate.components-button:hover:not(:disabled) {
+	background:   #f5f0ff;
+	border-color: #7c3aed;
+}
+
+/* ── Hint text ───────────────────────────────────────────────────────────── */
+
+.wp-agent-ai-block__hint {
+	font-size:   12px;
+	color:       #9ca3af;
+	margin-top:  10px;
+	margin-bottom: 0;
+}
