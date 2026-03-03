@@ -50,6 +50,9 @@ function wp_agent_ai_register_block(): void {
 	register_block_type( WP_AGENT_AI_PLUGIN_DIR . 'build/block' );
 
 	// Pass plugin data to the block editor script.
+	// WP derives the handle from the block name: {plugin-slug}-{block-slug}-editor-script
+	// block name = "wp-agent-ai/landing-page-writer" → handle below.
+	// If blocks don't appear, check the exact handle with: get_registered_scripts().
 	wp_localize_script(
 		'wp-agent-ai-landing-page-writer-editor-script',
 		'wpAgentAiData',
