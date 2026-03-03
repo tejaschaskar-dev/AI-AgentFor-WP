@@ -1,0 +1,36 @@
+/**
+ * WP Agent AI – Webpack Configuration
+ *
+ * Extends the official @wordpress/scripts default config with:
+ *  - Two entry points: block editor JS and admin settings JS
+ *  - Output to /build mirroring the entry path structure
+ *
+ * @package WpAgentAi
+ */
+
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+const path          = require( 'path' );
+
+module.exports = {
+	...defaultConfig,
+
+	entry: {
+		/**
+		 * Gutenberg block (editor-only JS + CSS).
+		 * Output → build/block/index.js  +  build/block/index.css
+		 */
+		'block/index': path.resolve( __dirname, 'src/block/index.js' ),
+
+		/**
+		 * Admin settings page (jQuery AJAX + CSS).
+		 * Output → build/admin/settings.js  +  build/admin/settings.css
+		 */
+		'admin/settings': path.resolve( __dirname, 'src/admin/settings.js' ),
+	},
+
+	output: {
+		...defaultConfig.output,
+		path:     path.resolve( __dirname, 'build' ),
+		filename: '[name].js',
+	},
+};
