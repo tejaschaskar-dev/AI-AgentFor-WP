@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wp-agent-ai/landing-page-writer",
+  "version": "1.0.0",
+  "title": "AI Landing Page Writer",
+  "category": "wp-agent-ai",
+  "icon": "superhero-alt",
+  "description": "Generate full landing page sections using OpenRouter AI.",
+  "keywords": [ "ai", "landing page", "generator", "openrouter", "gpt", "claude" ],
+  "textdomain": "wp-agent-ai",
+  "editorScript": "file:../../build/block/index.js",
+  "editorStyle":  "file:../../build/block/index.css",
+  "supports": {
+    "html":      false,
+    "reusable":  false,
+    "inserter":  true
+  },
+  "attributes": {
+    "description": {
+      "type":    "string",
+      "default": ""
+    },
+    "sectionType": {
+      "type":    "string",
+      "default": "hero"
+    },
+    "tone": {
+      "type":    "string",
+      "default": "professional"
+    },
+    "length": {
+      "type":    "string",
+      "default": "medium"
+    },
+    "lastGenerated": {
+      "type":    "object",
+      "default": null
+    }
+  }
+}
